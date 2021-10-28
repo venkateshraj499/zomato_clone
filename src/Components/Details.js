@@ -32,30 +32,30 @@ function Details(){
    const customStyles = {
     content: {
         top: '50%',
-        left: '50%',
-        right: 'auto',
+        left: '45%',
+        right: '0%',
         bottom: 'auto',
-        marginRight: '-50%',
+        marginRight: '0%',
         transform: 'translate(-50%, -50%)',
         backgroundColor: 'white',
         border: '1px solid black',
         height: '600px',
-        width:'60%'
+        width:'75%'
     },
    };
    const customStyles2 = {
     content: {
         top: '50%',
-        left: '50%',
-        right: 'auto',
+        left: '45%',
+        right: '0%',
         bottom: 'auto',
-        marginRight: '-50%',
+        marginRight: '0%',
         transform: 'translate(-50%, -50%)',
         backgroundColor: '#FFFF',
         border: '1px solid black',
         height: '600px',
         padding: '3% 5% 0 5%',
-        width:'60%'
+        width:'75%'
     }
    };
    function fetchRestaurant(){
@@ -226,7 +226,7 @@ function Details(){
                             <button className="btn btn-danger order-button" onClick={() => {setFormModal(true)}}> Pay </button>
                             {menuItems.map((item, index) => {
                                 return <div className="mainBox" style={{ width: '44rem', marginTop: '10px', marginBottom: '10px', }}>
-                                    <div className="card" style={{ width: '43rem', margin: 'auto' }}>
+                                    <div className="card" >
                                         <div className="row" style={{ paddingLeft: '10px',border:"none", paddingBottom: '10px',paddingTop: '20px', display:'flex' }}>
                                             <div className="col-xs-9 col-sm-9 col-md-9 col-lg-9 items " style={{ paddingLeft: '10px', paddingBottom: '10px' }}>
                                                 <span className="card-body">

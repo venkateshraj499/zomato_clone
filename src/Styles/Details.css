@@ -176,7 +176,7 @@
     margin-left: 4%;
 }
 .mainBox{
-    margin-left: 8%;
+    margin-left: 15%;
 }
 .total{
     font-family: Poppins;
@@ -275,9 +275,17 @@
 .thanks{
     color: #192f60;
 }
+.card{
+    width: 44rem;
+    margin: 0 auto
+}
 @media only screen and (max-width: 600px) {
     .form-label{
         margin-top: 0px ;
+    }
+    .card{
+        width: 33%;
+        margin: 0
     }
     .form-control{
         margin-left: 0px;
@@ -340,8 +348,8 @@
         margin-left: -6%;
     }
     .mainBox{
-        margin-left: -15%;
-        width: 200px;
+        margin-left: 0%;
+        width: 100px;
     }
     .items{
         width: 40%;
@@ -357,7 +365,8 @@
         width: 250px;
         padding: 0px;
     }
-    .name ,.descp{
-        width:180px
+    .name ,.descp,.price{
+        width:180px;
+        margin-left: 15px;
     }
 }
