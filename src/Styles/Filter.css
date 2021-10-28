@@ -303,8 +303,9 @@
       top: 15px
   }
   .login{
-      right:35%;
-      top:15px;
+      right:55%;
+      font-size: 15px;
+      top:20px;
   }
   .body{
       padding:0px;
