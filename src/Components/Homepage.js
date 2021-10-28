@@ -25,7 +25,7 @@ function Homepage(){
     function fetchData(){
         if (locId!==undefined){
             axios({
-                url: `https://lit-plains-73441.herokuapp.com/restaurants/${locId}`,
+                url: `https://vast-basin-30737.herokuapp.com/restaurants/${locId}`,
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
@@ -35,7 +35,7 @@ function Homepage(){
                 .catch()        
         }
         axios({
-            url: 'https://lit-plains-73441.herokuapp.com/locations',
+            url: 'https://vast-basin-30737.herokuapp.com/locations',
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -47,7 +47,7 @@ function Homepage(){
         })
 
         axios({
-            url: 'https://lit-plains-73441.herokuapp.com/mealtypes',
+            url: 'https://vast-basin-30737.herokuapp.com/mealtypes',
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
