@@ -78,7 +78,7 @@ function Header() {
             <div>
             <GoogleLogin
                 className="google"
-                clientId="406381790404-82an2nl2u3ic6onsfprtedv7ldtd3t3r.apps.googleusercontent.com"
+                clientId="406381790404-om7lulp99lgfhj4givpflnmevvk8msqt.apps.googleusercontent.com"
                 buttonText="Sign in with Google"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
