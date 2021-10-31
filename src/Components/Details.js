@@ -166,7 +166,7 @@ function Details(){
 
     getData(paymentObj).then(response => {
         var information = {
-            action: "https://securegw-stage.paytm.in/order/process",
+            action: "https://securegw.paytm.in",
             params: response
         }
         post(information)
