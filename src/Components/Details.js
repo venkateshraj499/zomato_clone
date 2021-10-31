@@ -147,7 +147,7 @@ function Details(){
     }
 
    const getData = (data) => {
-    return fetch(`http://localhost:2021/payment`, {
+    return fetch(`https://vast-basin-30737.herokuapp.com/payment`, {
         method: "POST",
         headers: {
             Accept: "application/json",
