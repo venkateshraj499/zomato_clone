@@ -61,7 +61,7 @@ function Details(){
    function fetchRestaurant(){
     
         axios({
-            url: `https://vast-basin-30737.herokuapp.com/restaurant/${resId}`,
+            url: `https://wicked-village-80388.herokuapp.com/restaurant/${resId}`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -77,7 +77,7 @@ function Details(){
    function fetchMenuItems(){
 
         axios({
-            url: `https://vast-basin-30737.herokuapp.com/menuitems/${resId}`,
+            url: `https://wicked-village-80388.herokuapp.com/menuitems/${resId}`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -106,7 +106,7 @@ function Details(){
        setSubTotal(total);
    }
   
-  /* // Payment Integration Functions
+   // Payment Integration Functions
    const isDate=(val)=> {
     // Cross realm comptatible
     return Object.prototype.toString.call(val) === '[object Date]'
@@ -117,7 +117,7 @@ function Details(){
     }
 
    const stringifyValue = (val) => {
-    if (this.isObj(val) && !this.isDate(val)) {
+    if (isObj(val) && !isDate(val)) {
         return JSON.stringify(val)
     } else {
         return val
@@ -133,7 +133,7 @@ function Details(){
         const input = document.createElement('input')
         input.setAttribute('type', 'hidden')
         input.setAttribute('name', key)
-        input.setAttribute('value', this.stringifyValue(params[key]))
+        input.setAttribute('value', stringifyValue(params[key]))
         form.appendChild(input)
     })
     return form
@@ -147,7 +147,7 @@ function Details(){
     }
 
    const getData = (data) => {
-    return fetch(`http://localhost:6503/api/payment`, {
+    return fetch(`http://localhost:2021/payment`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -157,7 +157,7 @@ function Details(){
     }).then(response => response.json()).catch(err => console.log(err))
    }
 
-   const handleNavigate = () =>{
+   const payments = () =>{
     
     const paymentObj = {
         amount: subTotal,
@@ -172,7 +172,7 @@ function Details(){
         post(information)
     })
    }
-   // End of Payment Integration Functions */
+   // End of Payment Integration Functions 
    useEffect(()=>{
         fetchRestaurant();    
         console.log(restaurant)    
@@ -310,19 +310,10 @@ function Details(){
                             <label className="form-label">Address</label>
                             <textarea required className="form-control textArea" placeholder="Enter Your Address" onChange={(event) =>{setAddress(event.target.value)}} />
                         </div>
-                        <button onClick={()=>{setOrderComplete(true)}} className="btn btn-danger" style={{ marginTop: '15px',marginLeft:"30px" }} >Proceed</button>
+                        <button onClick={()=>{payments()}} className="btn btn-danger" style={{ marginTop: '15px',marginLeft:"30px" }} >Proceed</button>
                     </div>
                 </Modal>
-            <Modal
-            isOpen={orderComplete}
-            style={customStyles}
-                >
-                    <div className="confirmDiv">
-                       <img src={order} alt ="Ordered" height="450px" width="500px"/>
-                       <h1 className="thanks">Thanks your order is confirmed!!!</h1> <br />
-                       <button onClick = {()=>{history.push('/')}}className="btn btn-primary">Go Back</button>
-                    </div>
-                </Modal>
+            
     </div>
    )
 }

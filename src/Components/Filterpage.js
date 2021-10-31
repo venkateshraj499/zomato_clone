@@ -40,7 +40,7 @@ function FIlterpage () {
         }
       console.log(filterObject)
       axios({
-            url: 'https://vast-basin-30737.herokuapp.com/filter',
+            url: 'https://wicked-village-80388.herokuapp.com/filter',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             data: filterObject
@@ -54,7 +54,7 @@ function FIlterpage () {
         })   
 
         axios({
-            url: 'https://vast-basin-30737.herokuapp.com/locations',
+            url: 'https://wicked-village-80388.herokuapp.com/locations',
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
