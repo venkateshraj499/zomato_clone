@@ -61,7 +61,7 @@ function Details(){
    function fetchRestaurant(){
     
         axios({
-            url: `https://wicked-village-80388.herokuapp.com/restaurant/${resId}`,
+            url: `https://vast-basin-30737.herokuapp.com/restaurant/${resId}`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -77,7 +77,7 @@ function Details(){
    function fetchMenuItems(){
 
         axios({
-            url: `https://wicked-village-80388.herokuapp.com/menuitems/${resId}`,
+            url: `https://vast-basin-30737.herokuapp.com/menuitems/${resId}`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
