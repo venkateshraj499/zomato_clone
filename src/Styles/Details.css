@@ -39,9 +39,7 @@
 }
 
 .add-number {
-    position: absolute;
-    top: 70%;
-    left: 84.5%;
+    margin-left: 51px;
 }
 
 .order-button {
@@ -276,15 +274,22 @@
     color: #192f60;
 }
 .card{
-    width: 44rem;
+    width: 54rem;
     margin: 0 auto
+}
+.title-img{
+    height: 90px;
+    width: 90px;
+    border-radius: 4px;
+    margin-top: 16px;
+    margin-left: 40px;
 }
 @media only screen and (max-width: 600px) {
     .form-label{
         margin-top: 0px ;
     }
     .card{
-        width: 33%;
+        width: 41%;
         margin: 0
     }
     .form-control{
@@ -354,19 +359,18 @@
     .items{
         width: 40%;
     }
-    .add-number{
-        left: 9%;
-        top: 90%;
-    }
-    .title-img{
-        margin-top:0%
-    }
     .row{
-        width: 250px;
+        width: 360px;
         padding: 0px;
     }
     .name ,.descp,.price{
-        width:180px;
+        width:250px;
         margin-left: 15px;
+    }
+    .title-img{
+        margin-left: 25%;
+    }
+    .add , .add-number {
+        margin-left: 91px;
     }
 }

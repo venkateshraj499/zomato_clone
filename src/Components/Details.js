@@ -6,7 +6,7 @@ import Modal from "react-modal"
 import queryString from 'query-string';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import order from "../Images/order.jpg";
+import nodata from "../Images/noData.png"
 import { useHistory } from "react-router";
 
 
@@ -17,7 +17,6 @@ function Details(){
    const [imageModal,setImageModal] = useState(false)
    const [subTotal, setSubTotal] = useState(0)
    const [formModal,setFormModal] = useState(false)
-   const [orderComplete,setOrderComplete] = useState(false)
    const [name, setName] = useState('')
    const [email, setEmail] = useState('')
    const [number, setNumber] = useState('')
@@ -31,31 +30,23 @@ function Details(){
    const resId = qs.restaurant
    const customStyles = {
     content: {
-        top: '50%',
-        left: '45%',
-        right: '0%',
         bottom: 'auto',
-        marginRight: '0%',
-        transform: 'translate(-50%, -50%)',
+        left:"1%",
         backgroundColor: 'white',
         border: '1px solid black',
         height: '600px',
-        width:'75%'
+        width:'98%'
     },
    };
    const customStyles2 = {
     content: {
-        top: '50%',
-        left: '45%',
-        right: '0%',
         bottom: 'auto',
-        marginRight: '0%',
-        transform: 'translate(-50%, -50%)',
+        left:"1%",
         backgroundColor: '#FFFF',
         border: '1px solid black',
         height: '600px',
         padding: '3% 5% 0 5%',
-        width:'75%'
+        width:'98%'
     }
    };
    function fetchRestaurant(){
@@ -223,8 +214,9 @@ function Details(){
                         <div >
                             <h3 className="restaurant-name">{restaurant.name}</h3>
                             <h3 className="total">SubTotal : {subTotal}</h3>
-                            <button className="btn btn-danger order-button" onClick={() => {setFormModal(true)}}> Pay </button>
-                            {menuItems.map((item, index) => {
+                            <button className="btn btn-danger order-button" onClick={() => {subTotal>0?setFormModal(true): alert('Select some Items')}}> Pay </button>
+                            {menuItems.length > 1 ? 
+                            menuItems.map((item, index) => {
                                 return <div className="mainBox" style={{ width: '44rem', marginTop: '10px', marginBottom: '10px', }}>
                                     <div className="card" >
                                         <div className="row" style={{ paddingLeft: '10px',border:"none", paddingBottom: '10px',paddingTop: '20px', display:'flex' }}>
@@ -237,26 +229,20 @@ function Details(){
                                                 </span>
                                             </div>
                                             <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                <img className="card-img-center title-img" src={`../${item.image}`} style={{
-                                                    height: '90px',
-                                                    width: '90px',
-                                                    borderRadius: '4px',
-                                                    marginTop: '16px',
-                                                    marginLeft: '40px'
-                                                }} />
+                                                <img className="card-img-center title-img" src={`../${item.image}`} />
                                                 {item.qty == 0 ? <div>
                                                     <button className="add" onClick={() => addItem("add", index) }>Add</button>
                                                 </div> :
                                                     <div className="add-number">
                                                         <button className="plus"onClick={() => addItem("sub", index) }>-</button>
-                                                        <span style={{ backgroundColor: 'white',color:" #292c40;",margin:"5px",fontWeight:"500" }}>{item.qty}</span>
+                                                        <span style={{ color:" #61b246",margin:"5px",fontWeight:"500" }}>{item.qty}</span>
                                                         <button  className="plus"onClick={() => addItem("add", index) }>+</button>
                                                     </div>}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            })}
+                            }) : <img className="no" src={nodata} alt="No Image" height="400" width="400" />}
                             <div className="card" style={{ width: '44rem', marginTop: '10px', marginBottom: '10px', margin: 'auto' }}>
 
                             </div>
@@ -310,7 +296,7 @@ function Details(){
                             <label className="form-label">Address</label>
                             <textarea required className="form-control textArea" placeholder="Enter Your Address" onChange={(event) =>{setAddress(event.target.value)}} />
                         </div>
-                        <button onClick={()=>{payments()}} className="btn btn-danger" style={{ marginTop: '15px',marginLeft:"30px" }} >Proceed</button>
+                        <button onClick={()=>{(name===''||email===''||number===''||address==='')? alert('Fill all the details'):payments()}} className="btn btn-danger" style={{ marginTop: '15px',marginLeft:"30px" }} >Proceed</button>
                     </div>
                 </Modal>
             
