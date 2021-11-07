@@ -88,7 +88,7 @@ function Header() {
             
             <div className="facebook">
               <FacebookLogin
-                appId="1205426896634483"
+                appId="275938174460051"
                 autoLoad={false}
                 fields="name,email,picture"
                 onClick={componentClicked}
